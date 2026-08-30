@@ -10,8 +10,8 @@ date: "2026-08-24"
 
 This document outlines the roadmap and process Pulsar OS will follow to introduce its upcoming editions.  
 
-## 1. Pear Edition (In Progress)  
-Pear Edition is dedicated to replicating the macOS user experience.  
+## 1. Bitten Fruit (In Progress)  
+Bitten Fruit is dedicated to replicating the macOS user experience.  
 To be production-ready, it needs to:
 - Have a fully working recovery system
 - Include a community app store

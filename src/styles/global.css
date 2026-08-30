@@ -897,7 +897,7 @@ html.dark .notice-icon {
 }
 
 /* ============================================
-   PEAR EDITION PAGE
+   Bitten Fruit PAGE
    ============================================ */
 
 /* Apple-inspired system font stack for the Pear page */
@@ -1078,12 +1078,12 @@ html.dark .notice-icon {
     right: 16px;
 }
 
-/* Pear Edition CTA (index) */
+/* Bitten Fruit CTA (index) */
 .pear-cta-section {
     position: relative;
     width: 100%;
     padding: 140px 0;
-    background-image: url("/assets/pear-edition/desktop.png");
+    background-image: url("/assets/bitten-fruit/desktop.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1360,7 +1360,7 @@ html.dark .notice-icon {
     }
 }
 
-/* Pear Edition vs Pear OS comparison */
+/* Bitten Fruit vs Pear OS comparison */
 .pear-compare {
     padding: 120px 0;
     border-top: 1px solid var(--border-color);

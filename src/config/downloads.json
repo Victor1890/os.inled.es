@@ -1,5 +1,5 @@
 {
-    "$comment": "Sistema de bloqueo de descargas. Pon enabled en false para desactivar TODOS los botones de descarga de la web (header, inicio, ISO, Pear Edition...). Se mostrará disabledMessage en su lugar.",
-    "enabled": true,
-    "disabledMessage": "Coming soon again"
+    "$comment": "Sistema de bloqueo de descargas. Pon enabled en false para desactivar TODOS los botones de descarga de la web (header, inicio, ISO, Bitten Fruit...). Se mostrará disabledMessage en su lugar.",
+    "enabled": false,
+    "disabledMessage": "Coming soon"
 }

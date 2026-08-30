@@ -15,21 +15,21 @@ export const SEO = {
       description:
         "The Linux distribution that includes editions to replicate the UI and UX of each of the most famous operating systems. You will feel at home.",
       keywords:
-        "linux, macos replacement, windows alternative, open source operating system, pulsar os, pear edition, wintux, auditable linux, pear os, winux, linuxfx, zorin os, gnome, elementary os",
+        "linux, macos replacement, windows alternative, open source operating system, pulsar os, Bitten Fruit, wintux, auditable linux, pear os, winux, linuxfx, zorin os, gnome, elementary os",
       og: {
         title: "Discover Pulsar OS! The True Replacement for your operative systems",
         description:
           "And join our community, together we can make the best Linux operating system.",
       },
     },
-    "pear-edition": {
-      title: "PulsarOS Pear Edition | It's time to replace Mac | Linux Distro",
+    "bitten-fruit": {
+      title: "PulsarOS Bitten Fruit | It's time to replace Mac | Linux Distro",
       description:
         "It is like Mac in everything: from the appearance to the flow of use. This really is an alternative!",
       keywords:
-        "macos linux, macos clone, pear edition, arch linux desktop, debian desktop, linux macos alternative, auditable linux, pear os, pear os nicec0re, elementary os",
+        "macos linux, macos clone, Bitten Fruit, arch linux desktop, debian desktop, linux macos alternative, auditable linux, pear os, pear os nicec0re, elementary os",
       og: {
-        title: "Switch from MacOS to Linux the easy way | Discover Pear Edition from Pulsar OS",
+        title: "Switch from MacOS to Linux the easy way | Discover Bitten Fruit from Pulsar OS",
         description:
           "It is like Mac in everything: from the appearance to the flow of use. This really is an alternative!",
       },
@@ -39,7 +39,7 @@ export const SEO = {
       description:
         "Minimum requirements, editions, boot variants, installers and flashing instructions for Pulsar OS. Read this before downloading the ISO.",
       keywords:
-        "pulsar os iso, download linux iso, pulsar os download, pear edition iso, linux flash usb, pulsar os requirements",
+        "pulsar os iso, download linux iso, pulsar os download, Bitten Fruit iso, linux flash usb, pulsar os requirements",
       og: {
         title: "It's time to download! Here are the ISO's for Pulsar OS",
         description:

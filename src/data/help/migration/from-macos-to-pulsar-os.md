@@ -1,6 +1,6 @@
 ---
-title: "From macOS to Pulsar OS (Pear Edition)"
-description: "The differences between macOS and Pulsar OS Pear Edition — packages, clipboard, settings, menu bar and background apps."
+title: "From macOS to Pulsar OS (Bitten Fruit)"
+description: "The differences between macOS and Pulsar OS Bitten Fruit — packages, clipboard, settings, menu bar and background apps."
 order: 1
 ---
 

@@ -14,7 +14,7 @@ const community = defineCollection({
         url: z.string().url().optional(),
         difficulty: z.enum(["Easy", "Medium", "Hard", "Expert"]).optional(),
         roadmapPhase: z
-            .enum(["Pear Edition Stable", "Tube OS", "Wintux", "General"])
+            .enum(["Bitten Fruit Stable", "Tube OS", "Wintux", "General"])
             .optional(),
         benefit: z.string().optional(),
         cost: z.enum(["Low", "Medium", "High"]).optional(),

@@ -194,7 +194,7 @@ All PRs are reviewed by a maintainer before merging. Be responsive to feedback â
 Check the [Project Board](https://github.com/orgs/Inled-Pulsar-OS/projects/1) for tasks marked for the community. Each task has:
 
 - **Difficulty**: Easy, Medium, Hard, or Expert
-- **Roadmap Phase**: Which phase it belongs to (Pear Edition, Tube OS, Wintux)
+- **Roadmap Phase**: Which phase it belongs to (Bitten Fruit, Tube OS, Wintux)
 - **Acceptance Criteria**: What "done" looks like
 
 To pick up a task:

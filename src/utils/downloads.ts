@@ -2,7 +2,7 @@
 //
 // Controlled from src/config/downloads.json:
 //   - "enabled": locks EVERY download button on the site (header, home,
-//     ISO page, Pear Edition...).
+//     ISO page, Bitten Fruit...).
 //   - "disabledMessage": shown on the disabled buttons when locked.
 import config from "@/config/downloads.json";
 

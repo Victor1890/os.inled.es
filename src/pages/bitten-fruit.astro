@@ -5,14 +5,14 @@ import ReleaseChannels from "../components/ReleaseChannels.astro";
 import { downloadAvailability } from "@/utils/downloads";
 
 const PICTURES = [
-    "/assets/pear-edition/boot.png",
-    "/assets/pear-edition/desktop.png",
-    "/assets/pear-edition/finder.png",
-    "/assets/pear-edition/quick-setting.png",
-    "/assets/pear-edition/seafari.png",
-    "/assets/pear-edition/select-disk.png",
-    "/assets/pear-edition/spotlight.png",
-    "/assets/pear-edition/wizard.png"
+    "/assets/bitten-fruit/boot.png",
+    "/assets/bitten-fruit/desktop.png",
+    "/assets/bitten-fruit/finder.png",
+    "/assets/bitten-fruit/quick-setting.png",
+    "/assets/bitten-fruit/seafari.png",
+    "/assets/bitten-fruit/select-disk.png",
+    "/assets/bitten-fruit/spotlight.png",
+    "/assets/bitten-fruit/wizard.png"
 ]
 
 const ISO_RELEASES = "https://github.com/Inled-Pulsar-OS/ISO/releases/latest";
@@ -24,12 +24,12 @@ const PEAR_DOWNLOAD_ENABLED = PEAR_DOWNLOAD.enabled;
 const PEAR_DOWNLOAD_MESSAGE = PEAR_DOWNLOAD.message;
 ---
 
-<Layout pageKey="pear-edition">
+<Layout pageKey="bitten-fruit">
     <div class="pear-page">
         <!-- Hero -->
-        <section class="pear-hero" aria-label="Pear Edition hero">
+        <section class="pear-hero" aria-label="Bitten Fruit hero">
             <div class="container pear-hero-inner">
-                <img src={PEAR_LOGO} alt="Pear Edition logo" class="pear-logo" />
+                <img src={PEAR_LOGO} alt="Bitten Fruit logo" class="pear-logo" />
                 <h1 class="pear-hero-title">
                     The macOS experience.<br /> But without a Mac
                 </h1>
@@ -39,7 +39,7 @@ const PEAR_DOWNLOAD_MESSAGE = PEAR_DOWNLOAD.message;
                 <div class="pear-hero-actions">
                     {PEAR_DOWNLOAD_ENABLED ? (
                         <a href={ISO_RELEASES} target="_blank" rel="noopener noreferrer" data-download-warn class="btn btn-primary">
-                            Download Pear Edition
+                            Download Bitten Fruit
                             <svg class="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                 <line x1="5" y1="12" x2="19" y2="12"></line>
                                 <polyline points="12 5 19 12 12 19"></polyline>
@@ -60,7 +60,7 @@ const PEAR_DOWNLOAD_MESSAGE = PEAR_DOWNLOAD.message;
                     <ul class="pear-carousel-track" id="pear-carousel-track" role="list">
                         {PICTURES.map((picture, index) => (
                             <li class="pear-carousel-slide" role="group" aria-label={`Slide ${index + 1}`}>
-                                <img src={picture} alt={`Pear Edition screenshot - ${index + 1}`} loading="lazy" />
+                                <img src={picture} alt={`Bitten Fruit screenshot - ${index + 1}`} loading="lazy" />
                             </li>
                         ))}
                     </ul>
@@ -166,7 +166,7 @@ const PEAR_DOWNLOAD_MESSAGE = PEAR_DOWNLOAD.message;
         <ReleaseChannels
             id="editions"
             title="Choose your edition"
-            subtitle="Pear Edition comes in two base editions — Debian and Arch. Both include two boot variants: GRUB and rEFInd. rEFInd is the closest to the Mac experience and the most comfortable to use."
+            subtitle="Bitten Fruit comes in two base editions — Debian and Arch. Both include two boot variants: GRUB and rEFInd. rEFInd is the closest to the Mac experience and the most comfortable to use."
             channels={[
                 {
                     title: "Debian Edition",
@@ -181,10 +181,10 @@ const PEAR_DOWNLOAD_MESSAGE = PEAR_DOWNLOAD.message;
             ]}
         />
 
-        <!-- Comparison: Pulsar OS Pear Edition vs Pear OS 
-        <section class="pear-compare" aria-label="Pulsar OS Pear Edition vs Pear OS">
+        <!-- Comparison: Pulsar OS Bitten Fruit vs Pear OS 
+        <section class="pear-compare" aria-label="Pulsar OS Bitten Fruit vs Pear OS">
             <div class="container">
-                <h2 class="section-title">Pear Edition vs Pear OS</h2>
+                <h2 class="section-title">Bitten Fruit vs Pear OS</h2>
                 <p class="section-subtitle">
                     Same inspiration, different focus. Both bring the Mac experience to
                     Linux — here is what each one cares about.
@@ -203,9 +203,9 @@ const PEAR_DOWNLOAD_MESSAGE = PEAR_DOWNLOAD.message;
 
                     <article class="pear-compare-card">
                         <div class="pear-compare-logo">
-                            <img src={PEAR_LOGO} alt="Pulsar OS Pear Edition logo" />
+                            <img src={PEAR_LOGO} alt="Pulsar OS Bitten Fruit logo" />
                         </div>
-                        <h3 class="pear-compare-name">Pulsar OS Pear Edition</h3>
+                        <h3 class="pear-compare-name">Pulsar OS Bitten Fruit</h3>
                         <p class="pear-compare-desc">
                             The distribution focused on stability and usability together with the MacOS design, perfect for everyday use. Created by the community and based on GNOME, like the original PearOS.
                         </p>
@@ -215,11 +215,11 @@ const PEAR_DOWNLOAD_MESSAGE = PEAR_DOWNLOAD.message;
         </section> -->
 
         <!-- Feature Cards -->
-       <!-- <section class="pear-features" aria-label="Pear Edition features">
+       <!-- <section class="pear-features" aria-label="Bitten Fruit features">
             <div class="container">
                 <h2 class="section-title">Built for how you work</h2>
                 <p class="section-subtitle">
-                    Pear Edition combines a refined desktop with the power of Arch Linux and Debian.
+                    Bitten Fruit combines a refined desktop with the power of Arch Linux and Debian.
                 </p>
 
                 <div class="pear-features-grid">
@@ -296,8 +296,8 @@ const PEAR_DOWNLOAD_MESSAGE = PEAR_DOWNLOAD.message;
                     <div class="pear-showcase-media">
                         <div class="image-placeholder">
                             <img
-                                src="/assets/pear-edition/desktop.png"
-                                alt="Pear Edition polished desktop environment"
+                                src="/assets/bitten-fruit/desktop.png"
+                                alt="Bitten Fruit polished desktop environment"
                                 loading="lazy"
                             />
                         </div>
@@ -309,9 +309,9 @@ const PEAR_DOWNLOAD_MESSAGE = PEAR_DOWNLOAD.message;
         <!-- Pear Apps -->
         <section class="pear-apps" aria-label="Pear apps">
             <div class="container">
-                <h2 class="section-title">Key features</h2>
+                <h2 class="section-title">The Mac way</h2>
                 <p class="section-subtitle">
-                    Tools that make Pear Edition more than just a pretty desktop.
+                   Bitten Fruit is not just a desktop, it is a fully developed system with functions that you will not see in any other distro but you know from MacOS
                 </p>
 
                 <div class="pear-apps-grid">
@@ -478,7 +478,7 @@ const PEAR_DOWNLOAD_MESSAGE = PEAR_DOWNLOAD.message;
                 <h2 class="section-title">An app for everything</h2>
                 <p class="section-subtitle">
                     Linux has one of the biggest software ecosystems in the world, and
-                    Pear Edition can run almost all of it.
+                    Bitten Fruit can run almost all of it.
                 </p>
 
                 <div class="pear-appstore-grid">
@@ -535,7 +535,7 @@ const PEAR_DOWNLOAD_MESSAGE = PEAR_DOWNLOAD.message;
         <!-- Cross-platform -->
         <CompatSection
             title="Connected everywhere"
-            subtitle="Your other systems aren't islands. Pear Edition bridges macOS, Windows, and Android — natively."
+            subtitle="Your other systems aren't islands. Bitten Fruit bridges macOS, Windows, and Android — natively."
             items={[
                 {
                     logo: "https://hosted.inled.es/macboat.png",
@@ -565,10 +565,10 @@ const PEAR_DOWNLOAD_MESSAGE = PEAR_DOWNLOAD.message;
         />
 
         <!-- Download CTA -->
-        <section id="download" class="pear-download" aria-label="Download Pear Edition">
+        <section id="download" class="pear-download" aria-label="Download Bitten Fruit">
             <div class="container">
                 <div class="pear-download-card">
-                    <h2 class="pear-download-title">Get Pear Edition</h2>
+                    <h2 class="pear-download-title">Get Bitten Fruit</h2>
                     <p class="pear-download-desc">
                         Completely free, open and better than MacOS in many ways
                     </p>
