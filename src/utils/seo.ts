@@ -11,7 +11,7 @@ export const SEO = {
   },
   pages: {
     index: {
-      title: "Pulsar OS — The True Replacement for Mac, Windows and much more!",
+      title: "Pulsar OS: The True Replacement for Mac, Windows and much more!",
       description:
         "The Linux distribution that includes editions to replicate the UI and UX of each of the most famous operating systems. You will feel at home.",
       keywords:
@@ -35,7 +35,7 @@ export const SEO = {
       },
     },
     iso: {
-      title: "Download the ISO — Pulsar OS",
+      title: "Download the ISO - Pulsar OS",
       description:
         "Minimum requirements, editions, boot variants, installers and flashing instructions for Pulsar OS. Read this before downloading the ISO.",
       keywords:
@@ -59,25 +59,25 @@ export const SEO = {
       },
     },
     help: {
-      title: "Help & Documentation — Pulsar OS",
+      title: "Help & Documentation - Pulsar OS",
       description:
         "Guides to install, use and contribute to Pulsar OS. From flashing the ISO to migrating from macOS, everything you need to get started.",
       keywords:
         "pulsar os help, pulsar os docs, pulsar os install, pulsar os guide, linux documentation, install pulsar os",
       og: {
-        title: "Help & Documentation — Pulsar OS",
+        title: "Help & Documentation - Pulsar OS",
         description:
           "Guides to install, use and contribute to Pulsar OS. From flashing the ISO to migrating from macOS, everything you need to get started.",
       },
     },
     resources: {
-      title: "Resources — Pulsar OS",
+      title: "Resources - Pulsar OS",
       description:
         "Download banners, logos and media assets to share Pulsar OS on social media. Tag us and get on the Wall of Fame.",
       keywords:
         "pulsar os resources, pulsar os banners, pulsar os logos, share pulsar os, social media assets",
       og: {
-        title: "Resources — Pulsar OS",
+        title: "Resources - Pulsar OS",
         description:
           "Download banners, logos and media assets to share Pulsar OS on social media.",
       },

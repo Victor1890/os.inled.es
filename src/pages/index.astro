@@ -1,357 +1,132 @@
 ---
-// Landing Page for Pulsar OS (Aligned with Star Labs/Novacustom visual style)
-// Página de Aterrizaje General de Pulsar OS (Alineada con el estilo visual de Star Labs/Novacustom)
 import Layout from "../layouts/Layout.astro";
-import CompatSection from "../components/CompatSection.astro";
-import ReleaseChannels from "../components/ReleaseChannels.astro";
 import { downloadAvailability } from "@/utils/downloads";
 
 const DOWNLOADS = downloadAvailability();
+const GITHUB_ORG = "https://github.com/Inled-Pulsar-OS";
+const GITHUB_PROJECT = "https://github.com/Inled-Pulsar-OS/projects/1";
+const DISCORD = "https://link.inled.es/discord";
+const MATRIX = "https://matrix.to/#/!POXBFohLnmrKwRBxTi:matrix.org?via=matrix.org";
+const TELEGRAM = "https://https://link.inled.es/telegram";
+const APPSTORE = "https://store-os.inled.es";
 ---
 
 <Layout pageKey="index">
-    <!-- Hero Section (2-column layout, pill buttons, large rounded image placeholder) -->
-    <!-- Sección Hero (Layout de 2 columnas, botones píldora, marcador de imagen grande) -->
+    <!-- Hero -->
     <section id="hero" class="hero-section" aria-label="Hero">
         <div class="container hero-grid">
-            <!-- Left Column: Copy & Actions / Columna Izquierda: Texto y Acciones -->
             <div class="hero-left">
                 <h1 class="hero-title">
-                    The replacement for your OS. <br> The future is here
+                    What you already know.<br /> Now you own it.
                 </h1>
                 <p class="hero-desc">
-                  The most innovative Linux distribution, which is not like the rest: not only is it theming, it is many functions that you already know from Mac or Windows
-                    <!-- Un sistema operativo elegante, completamente auditable y comunitario diseñado para clonar el flujo de tu entorno preferido con cero telemetría y libertad total. -->
+                    The same experience you use every day on Mac, Windows or Android TV; but free, auditable, and fully yours.
                 </p>
                 <div class="hero-actions">
-                        <a
-                            href="/bitten-fruit"
-                            class="btn btn-primary"
-                        >
-                           Discover Bitten Fruit Edition
-                            <svg
-                                class="btn-arrow"
-                                width="16"
-                                height="16"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2.5"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                            >
-                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                                <polyline points="12 5 19 12 12 19"></polyline>
-                            </svg>
-                        </a>
-                    <a
-                        href="/community"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="btn btn-secondary"
-                    >
-                        Explore community
-                    </a>
-                    <a
-                        href="https://link.inled.es/discord"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="btn btn-secondary"
-                    >
-                        <i class="fa-brands fa-discord"></i> Discord
-                    </a>
-                    <a
-                        href="https://matrix.to/#/!POXBFohLnmrKwRBxTi:matrix.org?via=matrix.org"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="btn btn-secondary"
-                    >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 512 512"
-                            width="16"
-                            height="16"
-                            style="vertical-align: middle; margin-right: 6px;"
-                        >
-                            <path
-                                fill="currentColor"
-                                d="M61.6 27l-32.9 0 0 458 32.9 0 0 11-45.6 0 0-480 45.6 0 0 11zM496 496l-45.6 0 0-11 32.9 0 0-458-32.9 0 0-11 45.6 0 0 480zM324.1 167.6c9 0 17.4 1.1 25.2 3.3s14.3 5.7 19.8 10.6 9.8 11.2 12.9 19c3 7.8 4.6 17.3 4.6 28.3l0 114.5-47 0 0-97c0-5.7-.2-11.2-.6-16.3s-1.7-9.5-3.6-13.2c-2-3.8-4.9-6.8-8.7-9s-9.1-3.3-15.7-3.3c-6.6 0-12 1.3-16.1 3.8-4.1 2.6-7.3 5.8-9.6 10-2.3 4.1-3.9 8.7-4.6 13.9-.7 5.2-1.2 10.4-1.2 15.7l0 95.3-47 0 0-96c0-5.1-.1-10.1-.4-15-.2-5-1.2-9.5-2.9-13.8-1.7-4.1-4.4-7.6-8.3-10.1s-9.5-3.8-17.1-3.8c-2.2 0-5.2 .5-8.8 1.5s-7.2 2.9-10.6 5.6-6.4 6.7-8.8 11.9-3.6 12-3.6 20.4l0 99.3-47 0 0-171.3 44.3 0 0 23.2 .7 0c6.2-8.9 13.7-15.7 22.3-20.5 8.7-4.9 18.7-7.3 30-7.3 10.8 0 20.7 2.1 29.6 6.3s15.7 11.6 20.4 22.2c5.1-7.5 12-14.1 20.7-19.8s19-8.6 30.9-8.6z"
-                            ></path>
-                        </svg>
-                        Matrix
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Hero Features Row (4 clean cards in a horizontal row on desktop, inspired by reference image) -->
-    <!-- Fila de Características del Hero (4 tarjetas limpias en una fila horizontal en escritorio, inspiradas en la referencia) -->
-
-    <!-- Collaborator Reward -->
-    <section class="collaborator-reward-section" aria-label="Collaborator rewards">
-        <div class="container">
-            <div class="collaborator-reward-card">
-                <div class="collaborator-reward-content">
-                    <h3 class="collaborator-reward-title">Contribute and get recognized</h3>
-                    <p class="collaborator-reward-desc">
-                        Your name goes on the <a href="/community/contributors">Wall of Fame</a> forever. We also write you a reference letter and list your contributions — useful when applying for jobs.
-                    </p>
-                </div>
-                <a href="/community" class="btn btn-primary collaborator-reward-btn">Start contributing</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="hero-features-section" aria-label="Key features">
-        <div class="container hero-features-grid">
-            <!-- Feature Card 1 -->
-            <article class="feature-card">
-                <h3 class="feature-title">
-                    Macos, Windows and Android integration
-                </h3>
-                <p class="feature-desc">
-                    With Pulsar, you can use the apps of your Android phone as
-                    desktop apps, you can run a fully MacOS desktop from
-                    official servers and execute Windows apps as native apps
-                    without Wine, eith a real Windows instance
-                    <!-- Diseñado sobre bases de Linux modernas, no adaptado a posteriori. Estable, seguro y listo para el día a día. -->
-                </p>
-            </article>
-
-            <!-- Feature Card 2 -->
-            <article class="feature-card">
-                <h3 class="feature-title">Usability first</h3>
-                <p class="feature-desc">
-                    A fully functional environment, which does not simply focus on replicating the MacOS or Windows experience, but rather focuses on the user experience. Without replicating patterns that are already difficult in MacOS or Windows, improving it.
-                    <!-- Un entorno de escritorio completamente funcional y estable configurado de fábrica para trabajar y jugar. -->
-                </p>
-            </article>
-
-            <!-- Feature Card 3 -->
-            <article class="feature-card">
-                <h3 class="feature-title">Rock-solid base</h3>
-                <p class="feature-desc">
-                    Unlike other custom distributions, we offer versions based on Arch Linux and Debian. In this way, we give the user the option to choose between more modern or more stable.
-                    <!-- Construido usando los repositorios de Debian Trixie. Misma estabilidad y paquetes del sistema core. -->
-                </p>
-            </article>
-
-            <!-- Feature Card 4 -->
-            <article class="feature-card">
-                <h3 class="feature-title">Fully Auditable</h3>
-                <p class="feature-desc">
-                    Everything is built on GitHub Actions, whose workflow and
-                    source code are auditable. We are the first Linux
-                    distribution that is 100% replicable from source code.
-                    You can contribute to all the code.
-                    <!-- Sin telemetría oculta ni restricciones de licencia. Verifica el código, audita y compila componentes. -->
-                </p>
-            </article>
-        </div>
-    </section>
-
-    <!-- Bitten Fruit Public Test Announcement -->
-    <!-- Anuncio del Test Público de Bitten Fruit -->
-    <section class="notice-section pear-test-notice" aria-label="Bitten Fruit test announcement">
-        <div class="container notice-container">
-            <article class="notice-card">
-                <span class="notice-icon">&#9432;</span>
-                <div class="notice-content">
-                    <h3 class="notice-title">
-                        Bitten Fruit is now in open alpha!
-                    </h3>
-                    <p class="notice-desc">
-                        The macOS-inspired edition of Pulsar OS is now in public
-                        alpha. Try it, report bugs and help us polish the
-                        experience — <a href="/bitten-fruit">learn more</a>.
-                    </p>
-                </div>
-            </article>
-        </div>
-    </section>
-
-    <!-- Bitten Fruit CTA Section (replaces Flavours) -->
-    <!-- Sección CTA de Bitten Fruit (reemplaza Flavours) -->
-    <section id="pear" class="pear-cta-section" aria-label="Bitten Fruit">
-        <div class="container">
-            <div class="pear-cta-content">
-                <img
-                    src="https://hosted.inled.es/pulsar-mac.png"
-                    alt="Bitten Fruit logo"
-                    class="pear-cta-logo"
-                />
-                <h2 class="pear-cta-title">Bitten Fruit</h2>
-                <p class="pear-cta-desc">
-                    Pulsar OS Bitten Fruit marks a before and after in the world of Linux distributions. It includes features that are innovative in Linux and that you already know from MacOS. It's not just theming, it's an operating system completely the same as MacOS, with the flow of use that you already know.
-                </p>
-                <div class="pear-cta-actions">
                     <a href="/bitten-fruit" class="btn btn-primary">
                         Discover Bitten Fruit
-                        <svg
-                            class="btn-arrow"
-                            width="16"
-                            height="16"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2.5"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                        >
+                        <svg class="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                             <line x1="5" y1="12" x2="19" y2="12"></line>
                             <polyline points="12 5 19 12 12 19"></polyline>
                         </svg>
                     </a>
-                    {DOWNLOADS.enabled ? (
-                        <a
-                            href="https://github.com/Inled-Pulsar-OS/ISO/releases/latest"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            data-download-warn
-                            class="btn btn-secondary"
-                        >
-                            Download the ISO
-                        </a>
-                    ) : (
-                        <span class="btn btn-secondary btn-disabled" aria-disabled="true">
-                            {DOWNLOADS.message}
-                        </span>
-                    )}
+                    <a href={DISCORD} target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                        <i class="fa-brands fa-discord"></i> Discord
+                    </a>
+                    <a href={GITHUB_ORG} target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 6px;">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        GitHub
+                    </a>
+                    <a href={GITHUB_PROJECT} target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;">
+                            <rect x="3" y="3" width="7" height="7"></rect>
+                            <rect x="14" y="3" width="7" height="7"></rect>
+                            <rect x="3" y="14" width="7" height="7"></rect>
+                            <rect x="14" y="14" width="7" height="7"></rect>
+                        </svg>
+                        Project Board
+                    </a>
+                    <a href={APPSTORE} target="_blank"  class="btn btn-secondary">
+                        App Store
+                    </a>
+                    <a href={MATRIX} target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="16" height="16" style="vertical-align: middle; margin-right: 6px;">
+                            <path fill="currentColor" d="M61.6 27l-32.9 0 0 458 32.9 0 0 11-45.6 0 0-480 45.6 0 0 11zM496 496l-45.6 0 0-11 32.9 0 0-458-32.9 0 0-11 45.6 0 0 480zM324.1 167.6c9 0 17.4 1.1 25.2 3.3s14.3 5.7 19.8 10.6 9.8 11.2 12.9 19c3 7.8 4.6 17.3 4.6 28.3l0 114.5-47 0 0-97c0-5.7-.2-11.2-.6-16.3s-1.7-9.5-3.6-13.2c-2-3.8-4.9-6.8-8.7-9s-9.1-3.3-15.7-3.3c-6.6 0-12 1.3-16.1 3.8-4.1 2.6-7.3 5.8-9.6 10-2.3 4.1-3.9 8.7-4.6 13.9-.7 5.2-1.2 10.4-1.2 15.7l0 95.3-47 0 0-96c0-5.1-.1-10.1-.4-15-.2-5-1.2-9.5-2.9-13.8-1.7-4.1-4.4-7.6-8.3-10.1s-9.5-3.8-17.1-3.8c-2.2 0-5.2 .5-8.8 1.5s-7.2 2.9-10.6 5.6-6.4 6.7-8.8 11.9-3.6 12-3.6 20.4l0 99.3-47 0 0-171.3 44.3 0 0 23.2 .7 0c6.2-8.9 13.7-15.7 22.3-20.5 8.7-4.9 18.7-7.3 30-7.3 10.8 0 20.7 2.1 29.6 6.3s15.7 11.6 20.4 22.2c5.1-7.5 12-14.1 20.7-19.8s19-8.6 30.9-8.6z"></path>
+                        </svg>
+                        Matrix
+                    </a>
+                    <a href={TELEGRAM} target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                        <i class="fa-brands fa-telegram" style="margin-right: 6px;"></i> Telegram
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Release Channels Section (Stable, Forky, Rolling) -->
-    <ReleaseChannels
-        id="releases"
-        title="Two release channel for every flavour"
-        subtitle="You may prefer the simplicity of Debian or the constant updating of Arch. Well, you can choose which one you prefer."
-        channels={[
-            {
-                title: "Debian Base",
-                badge: "Stable",
-                badgeClass: "stable",
-                desc: "The most stable and simple distribution. Perfect for older or modern computers without new graphics."
-            },
-            {
-                title: "Arch Linux Base",
-                badge: "Rolling Release",
-                badgeClass: "rolling",
-                desc: "Do you want to be up to date or does your computer need newer drivers? This is the best decision!"
-            }
-        ]}
-    />
-
-    <!-- Pulsar Integrations Section (Macboat, Winboat, Droidtux) -->
-    <!-- Sección de Integraciones de Pulsar (Macboat, Winboat, Droidtux) -->
-    <CompatSection
-        id="integrations"
-        title="Multi-os app compatibility"
-        subtitle="What many operating systems have failed to implement, we achieve. You can use everything from MacOS to Windows apps as native or even integrate your phone as if it were an iPhone in the Mac ecosystem."
-        items={[
-            {
-                logo: "https://hosted.inled.es/macboat.png",
-                alt: "Macboat Logo",
-                title: "Macboat",
-                desc: "Run ANY MacOS (AMD or ARM arch) on Pulsar OS with a complete desktop. Run from Big Sur to Sonoma and upgrade to Tahoe with one click. Opencore integration, no hassle, downloaded from Apple official servers."
-            },
-            {
-                logo: "https://hosted.inled.es/winboat_logo.NqN8dmd9.svg",
-                alt: "Winboat Logo",
-                title: "Winboat",
-                meta: "Third Party",
-                desc: "Execute Windows apps as normal apps on Pulsar OS. Under the hood, they're running on a Windows VM. No activation needed, downloaded from Microsoft official servers."
-            },
-            {
-                logo: "https://hosted.inled.es/droidtux.png",
-                alt: "Droidtux Logo",
-                title: "Droidtux",
-                desc: "Integrate your Android phone's apps as native apps, but they run on your phone. Use your phone as virtual camera."
-            },
-            {
-                logo: "https://hosted.inled.es/gsconnect.png",
-                alt: "GSConnect Logo",
-                title: "GSConnect",
-                desc: "Share notifications, control your desktop and many more with GSConnect."
-            }
-        ]}
-    />
-
-    <!-- Enterprise, Individual & Institution Section -->
-    <!-- Sección para Empresas, Particulares e Instituciones -->
-    <section id="enterprise" class="enterprise-section" aria-label="For everyone">
+    <!-- Flavours -->
+    <section class="flavours-section" aria-label="Choose your flavour">
         <div class="container">
-            <h2 class="section-title">
-                Perfect for companies, individuals and institutions
-            </h2>
+            <h2 class="section-title">Choose your flavour</h2>
             <p class="section-subtitle">
-                Pulsar OS is designed to fit any environment — professional,
-                personal or institutional. Transparency, sovereignty and
-                familiarity in a single system.
+               Pulsar OS is a set of "flavors", which are completely independent editions each dedicated to a purpose. For example, Bitten Fruit.
             </p>
 
-            <div class="enterprise-features-grid">
-                <article class="enterprise-card">
-                    <h3 class="enterprise-card-title">100% auditable code</h3>
-                    <p class="enterprise-card-desc">
-                        One of the few distributions with fully auditable source
-                        code. Everything is built on GitHub Actions and every
-                        line can be verified.
-                    </p>
-                </article>
+            <div class="flavours-grid flavours-centered">
+                <a href="/bitten-fruit" class="flavour-card">
+                    <img
+                        src="https://hosted.inled.es/pulsar-mac.png"
+                        alt="Bitten Fruit logo"
+                        class="flavour-logo"
+                    />
+                    <div class="flavour-info">
+                        <h3 class="flavour-name">Bitten Fruit</h3>
+                        <p class="flavour-desc">
+                            The MacOS experience you know, with what you like most, on Linux: it's your time, you're free.
+                        </p>
+                    </div>
+                    <span class="flavour-link">
+                        Discover
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </span>
+                </a>
 
-                <article class="enterprise-card">
-                    <h3 class="enterprise-card-title">
-                        Sovereign and European
-                    </h3>
-                    <p class="enterprise-card-desc">
-                        Developed in Europe, with applications audited by the European Linux community. No foreign interference.
-                    </p>
-                </article>
-
-                <article class="enterprise-card">
-                    <h3 class="enterprise-card-title">Community-driven</h3>
-                    <p class="enterprise-card-desc">
-                        We do not want to be a one-person distro, we are growing and we are going to delegate to the community.
-                    </p>
-                </article>
-
-                <article class="enterprise-card">
-                    <h3 class="enterprise-card-title">Familiar for everyone</h3>
-                    <p class="enterprise-card-desc">
-                        Replicates familiar user experience flows on Mac and Windows. Stable and secure.
-                    </p>
-                </article>
+                <!-- Future flavours go here -->
             </div>
         </div>
     </section>
 
-    <!-- Commitments -->
-    <section id="commitments" class="commitments-section" aria-label="Our commitments">
-        <div class="container">
-            <h2 class="section-title">What we stand for</h2>
-            <div class="commitments-grid">
-                <div class="commitment-item">
-                    <h3 class="commitment-title">Everyone can contribute</h3>
-                    <p class="commitment-desc">We are a happy community and we support each other. Join!</p>
-                </div>
-                <div class="commitment-item">
-                    <h3 class="commitment-title">Without ideologies or politics</h3>
-                    <p class="commitment-desc">We don't want to get angry or talk about politics. We do not associate ourselves with anything political. Free of bad vibes.</p>
-                </div>
-                <div class="commitment-item">
-                    <h3 class="commitment-title">No to AI slop, yes to enhanced development</h3>
-                    <p class="commitment-desc">Everything is tested, functional and secure. We don't ship unreviewed generated code.</p>
-                </div>
-                <div class="commitment-item">
-                    <h3 class="commitment-title">No ads on website</h3>
-                    <p class="commitment-desc">Pulsar OS does not generate expenses, therefore it does not need income through advertisements. If we need income to improve the infrastructure, we will add an optional donation button.</p>
-                </div>
-                <div class="commitment-item">
-                    <h3 class="commitment-title">Community driven</h3>
-                    <p class="commitment-desc">Decisions are made with the community, not by a single person. Open governance.</p>
+    <!-- Community -->
+    <section id="community" class="community-section" aria-label="Community">
+        <div class="container community-container">
+            <div class="community-card">
+                <h2 class="community-title">Community</h2>
+                <p class="community-desc">
+                    We are an open, friendly and happy community. You are welcome, join!
+                </p>
+                <div class="community-actions">
+                    <a href="/community" class="btn btn-secondary">
+                        See community page
+                    </a>
+                    <a href={DISCORD} target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                        <i class="fa-brands fa-discord"></i> Discord
+                    </a>
+                    <a href={MATRIX} target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="16" height="16" style="vertical-align: middle; margin-right: 6px;">
+                            <path fill="currentColor" d="M61.6 27l-32.9 0 0 458 32.9 0 0 11-45.6 0 0-480 45.6 0 0 11zM496 496l-45.6 0 0-11 32.9 0 0-458-32.9 0 0-11 45.6 0 0 480zM324.1 167.6c9 0 17.4 1.1 25.2 3.3s14.3 5.7 19.8 10.6 9.8 11.2 12.9 19c3 7.8 4.6 17.3 4.6 28.3l0 114.5-47 0 0-97c0-5.7-.2-11.2-.6-16.3s-1.7-9.5-3.6-13.2c-2-3.8-4.9-6.8-8.7-9s-9.1-3.3-15.7-3.3c-6.6 0-12 1.3-16.1 3.8-4.1 2.6-7.3 5.8-9.6 10-2.3 4.1-3.9 8.7-4.6 13.9-.7 5.2-1.2 10.4-1.2 15.7l0 95.3-47 0 0-96c0-5.1-.1-10.1-.4-15-.2-5-1.2-9.5-2.9-13.8-1.7-4.1-4.4-7.6-8.3-10.1s-9.5-3.8-17.1-3.8c-2.2 0-5.2 .5-8.8 1.5s-7.2 2.9-10.6 5.6-6.4 6.7-8.8 11.9-3.6 12-3.6 20.4l0 99.3-47 0 0-171.3 44.3 0 0 23.2 .7 0c6.2-8.9 13.7-15.7 22.3-20.5 8.7-4.9 18.7-7.3 30-7.3 10.8 0 20.7 2.1 29.6 6.3s15.7 11.6 20.4 22.2c5.1-7.5 12-14.1 20.7-19.8s19-8.6 30.9-8.6z"></path>
+                        </svg>
+                        Matrix
+                    </a>
+                    <a href={TELEGRAM} target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                        <i class="fa-brands fa-telegram" style="margin-right: 6px;"></i> Telegram
+                    </a>
+                    <a href="/help" class="btn btn-secondary">
+                        Docs
+                    </a>
                 </div>
             </div>
         </div>
@@ -362,28 +137,27 @@ const DOWNLOADS = downloadAvailability();
         <div class="container">
             <h2 class="section-title">Spread the word</h2>
             <p class="partnering-desc">
-                Pulsar OS grows by word of mouth. If you like the project, sharing it on social media or partnering with us helps more than you think.
+                Pulsar OS grows by word of mouth. Sharing it or partnering with us helps more than you think.
             </p>
             <div class="partnering-grid">
                 <article class="partnering-card">
                     <h3 class="partnering-card-title">Share on social media</h3>
                     <p class="partnering-card-desc">
-                        Post about Pulsar OS on X, Mastodon, Reddit or wherever you hang out.  <br>
-                        You will appear on the Wall of Fame
+                        Post about Pulsar OS on X, Mastodon, Reddit or wherever you hang out. You will appear on the Wall of Fame.
                     </p>
                 </article>
 
                 <article class="partnering-card">
                     <h3 class="partnering-card-title">Partner with us</h3>
                     <p class="partnering-card-desc">
-                        Do you know any brand, institution, company that might be interested in Pulsar OS or that wants to collaborate with us to make hardware?
+                        Do you know any brand, institution or company interested in Pulsar OS or that wants to collaborate on hardware?
                     </p>
                     <div class="partnering-actions">
-                        <a href="https://link.inled.es/discord" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
-                            <i class="fa-brands fa-discord"></i> Contact on Discord
+                        <a href={DISCORD} target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                            <i class="fa-brands fa-discord"></i> Discord
                         </a>
                         <a href="mailto:hi@inled.es" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
-                            <i class="fa-solid fa-envelope"></i> Contact via Mail
+                            <i class="fa-solid fa-envelope"></i> Email
                         </a>
                     </div>
                 </article>
@@ -391,59 +165,26 @@ const DOWNLOADS = downloadAvailability();
         </div>
     </section>
 
-    <!-- Community & Contribute Section -->
-    <!-- Sección de Comunidad y Contribución -->
-    <section id="community" class="community-section" aria-label="Community">
-        <div class="container community-container">
-            <div class="community-card">
-                <h2 class="community-title">Community</h2>
-                <p class="community-desc">
-                    We want to grow by delegating responsibility, not by
-                    concentrating decisions in a handful of people.  <br>
-                   PulsarOS is an open community, without elitism, in which everyone is welcome, regardless of level or ideas. We only want the good things about Linux, to be geeks but with love for each other.
-                </p>
-                <div class="community-actions">
-                    <a href="/community" class="btn btn-secondary">
-                        See community page
-                    </a>
-                    <a
-                        href="https://link.inled.es/discord"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="btn btn-secondary"
-                    >
-                        <i class="fa-brands fa-discord"></i> Discord
-                    </a>
-                    <a
-                        href="https://matrix.to/#/!POXBFohLnmrKwRBxTi:matrix.org?via=matrix.org"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="btn btn-secondary"
-                    >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 512 512"
-                            width="16"
-                            height="16"
-                            style="vertical-align: middle; margin-right: 6px;"
-                        >
-                            <path
-                                fill="currentColor"
-                                d="M61.6 27l-32.9 0 0 458 32.9 0 0 11-45.6 0 0-480 45.6 0 0 11zM496 496l-45.6 0 0-11 32.9 0 0-458-32.9 0 0-11 45.6 0 0 480zM324.1 167.6c9 0 17.4 1.1 25.2 3.3s14.3 5.7 19.8 10.6 9.8 11.2 12.9 19c3 7.8 4.6 17.3 4.6 28.3l0 114.5-47 0 0-97c0-5.7-.2-11.2-.6-16.3s-1.7-9.5-3.6-13.2c-2-3.8-4.9-6.8-8.7-9s-9.1-3.3-15.7-3.3c-6.6 0-12 1.3-16.1 3.8-4.1 2.6-7.3 5.8-9.6 10-2.3 4.1-3.9 8.7-4.6 13.9-.7 5.2-1.2 10.4-1.2 15.7l0 95.3-47 0 0-96c0-5.1-.1-10.1-.4-15-.2-5-1.2-9.5-2.9-13.8-1.7-4.1-4.4-7.6-8.3-10.1s-9.5-3.8-17.1-3.8c-2.2 0-5.2 .5-8.8 1.5s-7.2 2.9-10.6 5.6-6.4 6.7-8.8 11.9-3.6 12-3.6 20.4l0 99.3-47 0 0-171.3 44.3 0 0 23.2 .7 0c6.2-8.9 13.7-15.7 22.3-20.5 8.7-4.9 18.7-7.3 30-7.3 10.8 0 20.7 2.1 29.6 6.3s15.7 11.6 20.4 22.2c5.1-7.5 12-14.1 20.7-19.8s19-8.6 30.9-8.6z"
-                            ></path>
-                        </svg>
-                        Matrix
-                    </a>
-                    <a
-                        href="https://github.com/Inled-Pulsar-OS/DOCS/wiki"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="btn btn-secondary"
-                    >
-                        Documentation
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Auto-redirect to Bitten Fruit when user reaches the very bottom -->
+    <div style="height: 300px;"></div>
+    <div id="bottom-sentinel" aria-hidden="true"></div>
+
+    <script>
+        (function () {
+            let redirected = false;
+
+            function checkBottom() {
+                if (redirected) return;
+                const scrollPos = window.scrollY + window.innerHeight;
+                const pageHeight = document.documentElement.scrollHeight;
+                // Only redirect when within 200px of the absolute bottom
+                if (scrollPos >= pageHeight - 200) {
+                    redirected = true;
+                    window.location.href = "/bitten-fruit";
+                }
+            }
+
+            window.addEventListener("scroll", checkBottom, { passive: true });
+        })();
+    </script>
 </Layout>

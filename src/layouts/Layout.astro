@@ -118,6 +118,17 @@ const DOWNLOADS = downloadAvailability();
                 } else {
                     document.documentElement.classList.remove("dark");
                 }
+
+                // Dynamic live listener for OS dark/light mode changes
+                window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
+                    if (!localStorage.getItem("theme")) {
+                        if (e.matches) {
+                            document.documentElement.classList.add("dark");
+                        } else {
+                            document.documentElement.classList.remove("dark");
+                        }
+                    }
+                });
             })();
         </script>
     </head>
@@ -142,6 +153,7 @@ const DOWNLOADS = downloadAvailability();
                     <a href="/community" class="nav-link">Community</a>
                     <a href="/resources" class="nav-link">Resources</a>
                     <a href="/help" class="nav-link">Help and docs</a>
+                    <a href="https://store-os.inled.es" class="nav-link">App Store</a>
             
                 </nav>
 
@@ -222,6 +234,15 @@ const DOWNLOADS = downloadAvailability();
                         </svg>
                     </a>
                     <a
+                        href="https://link.inled.es/telegram"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn-icon btn-nav-icon"
+                        aria-label="Telegram"
+                    >
+                        <i class="fa-brands fa-telegram"></i>
+                    </a>
+                    <a
                         href="https://github.com/Inled-Pulsar-OS"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -291,9 +312,11 @@ const DOWNLOADS = downloadAvailability();
                 <a href="/community" class="mobile-nav-link" onclick="closeMobileMenu()">Community</a>
                 <a href="/resources" class="mobile-nav-link" onclick="closeMobileMenu()">Resources</a>
                 <a href="/help" class="mobile-nav-link" onclick="closeMobileMenu()">Help & Docs</a>
+                <a href="https://store-os.inled.es" class="mobile-nav-link" onclick="closeMobileMenu()">App Store</a>
                 <a href="https://github.com/Inled-Pulsar-OS" target="_blank" rel="noopener noreferrer" class="mobile-nav-link" onclick="closeMobileMenu()">GitHub</a>
                 <a href="https://link.inled.es/discord" target="_blank" rel="noopener noreferrer" class="mobile-nav-link" onclick="closeMobileMenu()">Discord</a>
                 <a href="https://matrix.to/#/!POXBFohLnmrKwRBxTi:matrix.org?via=matrix.org" target="_blank" rel="noopener noreferrer" class="mobile-nav-link" onclick="closeMobileMenu()">Matrix</a>
+                <a href="https://link.inled.es/telegram" target="_blank" rel="noopener noreferrer" class="mobile-nav-link" onclick="closeMobileMenu()">Telegram</a>
             </nav>
         </header>
 

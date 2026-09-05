@@ -88,4 +88,187 @@ const categoryName = prettyCategory(category);
             </div>
         </div>
     </section>
+
+    <!-- Mermaid Lightbox Modal (Zoom, Pan, Fullscreen) -->
+    <div class="mermaid-modal-backdrop" id="mermaid-modal" role="dialog" aria-modal="true" aria-label="Diagram Viewer">
+        <header class="mermaid-modal-header">
+            <span class="mermaid-modal-title">Diagram Viewer</span>
+            <div class="mermaid-modal-controls">
+                <button type="button" class="mermaid-ctrl-btn" id="mermaid-zoom-in" title="Zoom In">Zoom In (+)</button>
+                <button type="button" class="mermaid-ctrl-btn" id="mermaid-zoom-out" title="Zoom Out">Zoom Out (-)</button>
+                <button type="button" class="mermaid-ctrl-btn" id="mermaid-reset" title="Reset Zoom">Reset</button>
+                <button type="button" class="mermaid-ctrl-btn" id="mermaid-close" title="Close">Close</button>
+            </div>
+        </header>
+        <div class="mermaid-modal-viewport" id="mermaid-viewport">
+            <div class="mermaid-modal-content" id="mermaid-modal-content"></div>
+        </div>
+    </div>
+
+    <!-- Dynamic Mermaid Diagram Support & Lightbox Controller -->
+    <script type="module">
+        import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
+
+        let currentScale = 1;
+        let panX = 0;
+        let panY = 0;
+        let isDragging = false;
+        let startX = 0;
+        let startY = 0;
+
+        const modal = document.getElementById("mermaid-modal");
+        const modalContent = document.getElementById("mermaid-modal-content");
+        const viewport = document.getElementById("mermaid-viewport");
+        const btnZoomIn = document.getElementById("mermaid-zoom-in");
+        const btnZoomOut = document.getElementById("mermaid-zoom-out");
+        const btnReset = document.getElementById("mermaid-reset");
+        const btnClose = document.getElementById("mermaid-close");
+
+        function updateTransform() {
+            if (modalContent) {
+                modalContent.style.transform = `translate(${panX}px, ${panY}px) scale(${currentScale})`;
+            }
+        }
+
+        function openModal(svgHtml) {
+            if (!modal || !modalContent) return;
+            modalContent.innerHTML = `<div class="mermaid-modal-canvas">${svgHtml}</div>`;
+            currentScale = 1;
+            panX = 0;
+            panY = 0;
+            updateTransform();
+            modal.classList.add("is-open");
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeModal() {
+            if (!modal) return;
+            modal.classList.remove("is-open");
+            document.body.style.overflow = "";
+        }
+
+        btnZoomIn?.addEventListener("click", () => {
+            currentScale = Math.min(currentScale * 1.25, 5);
+            updateTransform();
+        });
+
+        btnZoomOut?.addEventListener("click", () => {
+            currentScale = Math.max(currentScale / 1.25, 0.3);
+            updateTransform();
+        });
+
+        btnReset?.addEventListener("click", () => {
+            currentScale = 1;
+            panX = 0;
+            panY = 0;
+            updateTransform();
+        });
+
+        btnClose?.addEventListener("click", closeModal);
+
+        modal?.addEventListener("click", (e) => {
+            if (e.target === modal || e.target === viewport) {
+                closeModal();
+            }
+        });
+
+        window.addEventListener("keydown", (e) => {
+            if (e.key === "Escape" && modal?.classList.contains("is-open")) {
+                closeModal();
+            }
+        });
+
+        // Wheel Zoom
+        viewport?.addEventListener("wheel", (e) => {
+            e.preventDefault();
+            const delta = e.deltaY < 0 ? 1.15 : 0.85;
+            currentScale = Math.min(Math.max(currentScale * delta, 0.3), 6);
+            updateTransform();
+        }, { passive: false });
+
+        // Pan / Drag
+        viewport?.addEventListener("mousedown", (e) => {
+            if (e.button !== 0) return;
+            isDragging = true;
+            startX = e.clientX - panX;
+            startY = e.clientY - panY;
+        });
+
+        window.addEventListener("mousemove", (e) => {
+            if (!isDragging) return;
+            panX = e.clientX - startX;
+            panY = e.clientY - startY;
+            updateTransform();
+        });
+
+        window.addEventListener("mouseup", () => {
+            isDragging = false;
+        });
+
+        async function initMermaid() {
+            const isDark = document.documentElement.classList.contains("dark");
+            mermaid.initialize({
+                startOnLoad: false,
+                theme: isDark ? "dark" : "neutral",
+                themeVariables: isDark ? {
+                    darkMode: true,
+                    background: "#171424",
+                    primaryColor: "#966ce8",
+                    primaryTextColor: "#f5f4f9",
+                    lineColor: "#676ff8",
+                    fontFamily: "'Space Grotesk', 'Inter', sans-serif"
+                } : {
+                    primaryColor: "#676ff8",
+                    primaryTextColor: "#111111",
+                    lineColor: "#966ce8",
+                    fontFamily: "'Space Grotesk', 'Inter', sans-serif"
+                }
+            });
+
+            const blocks = Array.from(document.querySelectorAll(
+                'pre[data-language="mermaid"], pre.astro-code[data-language="mermaid"], pre.mermaid, code.language-mermaid'
+            ));
+
+            if (blocks.length === 0) return;
+
+            for (let i = 0; i < blocks.length; i++) {
+                const block = blocks[i];
+                const code = block.innerText || block.textContent || "";
+                if (!code.trim()) continue;
+
+                try {
+                    const id = `mermaid-svg-${Date.now()}-${i}`;
+                    const { svg } = await mermaid.render(id, code.trim());
+                    const container = document.createElement("div");
+                    container.className = "mermaid-chart";
+                    container.setAttribute("title", "Click to expand diagram");
+                    container.innerHTML = `
+                        <span class="mermaid-expand-hint">Expand Diagram</span>
+                        ${svg}
+                    `;
+                    
+                    container.addEventListener("click", () => {
+                        openModal(svg);
+                    });
+
+                    block.replaceWith(container);
+                } catch (err) {
+                    console.error("Mermaid diagram rendering error:", err);
+                }
+            }
+        }
+
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", initMermaid);
+        } else {
+            initMermaid();
+        }
+
+        window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
+            setTimeout(initMermaid, 50);
+        });
+        document.getElementById("theme-toggle")?.addEventListener("click", () => {
+            setTimeout(initMermaid, 50);
+        });
+    </script>
 </Layout>

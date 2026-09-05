@@ -558,6 +558,15 @@ a:hover {
     .community-title {
         font-size: 1.75rem;
     }
+
+    .flavours-grid {
+        grid-template-columns: 1fr;
+        padding: 0 8px;
+    }
+
+    .flavour-card {
+        padding: 36px 24px;
+    }
 }
 
 /* Integrations Section / Sección de Integraciones */
@@ -1150,6 +1159,64 @@ html.dark .notice-icon {
     .pear-cta-title {
         font-size: 2rem;
         letter-spacing: -1px;
+    }
+}
+
+/* Bitten Fruit CTA (bottom of homepage) */
+.bitten-fruit-cta-section {
+    padding: 100px 0;
+    border-top: 1px solid var(--border-color);
+}
+
+.bitten-fruit-cta-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 32px;
+    padding: 80px 48px;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: border-color var(--transition-speed) ease;
+}
+
+.bitten-fruit-cta-card:hover {
+    border-color: var(--border-focus);
+}
+
+.bitten-fruit-cta-logo {
+    width: 80px;
+    height: auto;
+    margin-bottom: 28px;
+    filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.12));
+}
+
+.bitten-fruit-cta-title {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -1.5px;
+    margin-bottom: 16px;
+    color: var(--text-primary);
+}
+
+.bitten-fruit-cta-desc {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    margin-bottom: 36px;
+    line-height: 1.6;
+    max-width: 500px;
+}
+
+@media (max-width: 600px) {
+    .bitten-fruit-cta-card {
+        padding: 48px 24px;
+    }
+
+    .bitten-fruit-cta-title {
+        font-size: 1.75rem;
     }
 }
 
@@ -2034,6 +2101,96 @@ html.dark .community-status {
     .commitment-item {
         padding: 20px 0;
     }
+}
+
+/* Flavours Section */
+.flavours-section {
+    padding: 100px 0;
+    border-top: 1px solid var(--border-color);
+}
+
+.flavours-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 24px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.flavours-centered {
+    display: flex;
+    justify-content: center;
+}
+
+.flavour-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 28px;
+    padding: 48px 36px;
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: all var(--transition-speed) ease;
+}
+
+.flavour-card:hover {
+    border-color: var(--border-focus);
+    background-color: var(--bg-card-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 24px 50px rgba(0, 0, 0, 0.06);
+    color: var(--text-primary);
+}
+
+.flavour-logo {
+    width: 80px;
+    height: auto;
+    margin-bottom: 24px;
+    filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.12));
+}
+
+.flavour-info {
+    flex: 1;
+}
+
+.flavour-name {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+}
+
+.flavour-desc {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 28px;
+}
+
+.flavour-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--accent-purple);
+    transition: color var(--transition-speed) ease;
+}
+
+.flavour-card:hover .flavour-link {
+    color: var(--accent-blue);
+}
+
+.flavour-link svg {
+    transition: transform var(--transition-speed) ease;
+}
+
+.flavour-card:hover .flavour-link svg {
+    transform: translateX(4px);
 }
 
 /* Partnering */
@@ -3088,4 +3245,168 @@ html.js :where([data-reveal].is-visible) {
     .card-watermark {
         display: none;
     }
+}
+
+/* Mermaid Diagrams Interactive Container & Lightbox */
+.mermaid-chart {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 28px 0;
+    padding: 32px 24px;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    overflow-x: auto;
+    cursor: zoom-in;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+}
+
+.mermaid-chart:hover {
+    border-color: var(--accent-purple);
+    box-shadow: 0 8px 24px rgba(150, 108, 232, 0.15);
+}
+
+.mermaid-chart svg {
+    max-width: 100%;
+    height: auto;
+    pointer-events: none;
+}
+
+.mermaid-expand-hint {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: var(--bg-highlight);
+    border: 1px solid var(--border-color);
+    border-radius: 100px;
+    padding: 4px 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    pointer-events: none;
+    opacity: 0.75;
+    transition: opacity 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.mermaid-chart:hover .mermaid-expand-hint {
+    opacity: 1;
+    color: var(--accent-purple);
+    border-color: var(--accent-purple);
+}
+
+html.dark .mermaid-chart {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Lightbox Modal for Mermaid Diagram Fullscreen & Zoom */
+.mermaid-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background-color: rgba(13, 11, 21, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mermaid-modal-backdrop.is-open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.mermaid-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+    background: rgba(23, 20, 36, 0.85);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    color: #f5f4f9;
+}
+
+.mermaid-modal-title {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #f5f4f9;
+    letter-spacing: -0.3px;
+}
+
+.mermaid-modal-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.mermaid-ctrl-btn {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: #f5f4f9;
+    border-radius: 100px;
+    padding: 6px 14px;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.mermaid-ctrl-btn:hover {
+    background: var(--accent-purple);
+    border-color: var(--accent-purple);
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+.mermaid-modal-viewport {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: grab;
+    user-select: none;
+    padding: 24px;
+}
+
+.mermaid-modal-viewport:active {
+    cursor: grabbing;
+}
+
+.mermaid-modal-content {
+    transform-origin: center center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.05s ease-out;
+}
+
+.mermaid-modal-canvas {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 90vw;
+    max-height: 82vh;
+}
+
+.mermaid-modal-canvas svg {
+    width: 100% !important;
+    height: 100% !important;
+    min-width: 320px;
+    max-width: 80vw;
+    max-height: 70vh;
+    display: block;
 }

@@ -9,13 +9,12 @@ Installing Pulsar OS is a task a thousand times easier than installing Windows o
 All you need is a USB drive (or storage memory) and a disk image flashing tool.
 
 - If you come from another Linux distribution, we recommend that you **do not use Balena Etcher**. Use `gnome-disk-utility` instead.
-- For Windows users, we recommend [downloading Balena Etcher](https://etcher.balena.io/).
+- For Windows users or anything else, use dd
 
-We don't have to explain much about the flashing process in Etcher, since even a 5-year-old child would know how to do it. What we do have to talk about are the most common mistakes, to prevent everything from being messed up.
 
 ## Secure Boot
 
-Our great friend Secure Boot — a Microsoft invention to prevent the installation of Linux at the hardware level. Obviously it has a security component too, but it is a big pain for Linux.
+Our great friend Secure Boot, a Microsoft invention to prevent the installation of Linux at the hardware level. Obviously it has a security component too, but it is a big pain for Linux.
 
 We are trying to implement support for Secure Boot. In the meantime, you will need to go into your device's BIOS and disable it. It is not a virus or danger: the only thing your computer will not do is check the integrity of your operating system before starting it, to avoid viruses. But Linux has fewer viruses than Windows, and Pulsar OS is 100% auditable.
 
@@ -23,4 +22,3 @@ We are trying to implement support for Secure Boot. In the meantime, you will ne
 
 ## Dual boot
 
-Support for dual boot has not yet been tested.

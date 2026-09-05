@@ -23,7 +23,7 @@ Once these tasks are completed, work will begin on the next flavor:
 
 ## 2. TubeOS Edition (Not Started Yet)  
 This edition focuses on bridging two worlds: NAS and TV.  
-TubeOS will allow you to comfortably manage a PC as a NAS, featuring an updated version of CasaOS, a web-based installer, and—in the Arch edition—Plasma Bigscreen configured by default.  
+TubeOS will allow you to comfortably manage a PC as a NAS, featuring an updated version of CasaOS, a web-based installer, and, in the Arch edition, Plasma Bigscreen configured by default.  
 It will offer both Arch and Debian builds.
 
 ## 3. Wintux Edition (Windows-Style) (Not Started Yet)  

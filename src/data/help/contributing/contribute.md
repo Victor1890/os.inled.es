@@ -1,6 +1,6 @@
 ---
 title: "Contribute to Pulsar OS"
-description: "How to get involved — say hello on Discord, check the project board and pick a task that interests you."
+description: "How to get involved: say hello on Discord, check the project board and pick a task that interests you."
 order: 1
 ---
 
@@ -8,7 +8,7 @@ We are delighted that you are interested in contributing to Pulsar OS.
 
 ## Before starting
 
-- We recommend you visit our [Discord server](https://link.inled.es/discord) and say hello.
+- We recommend you visit our [Discord server](https://link.inled.es/discord) or any other chat platform we have and say hello.
 - If you have any questions, the Discord server is the right place.
 - If you are a developer, take a look at [the project board](https://github.com/orgs/Inled-Pulsar-OS/projects/1).
 
