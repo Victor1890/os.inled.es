@@ -1,7 +1,7 @@
 ---
 type: "task"
 title: "[TASK] Improve liquid glass"
-status: "Backlog"
+status: "En proceso"
 date: 2026-08-17T18:06:56Z
 url: "https://github.com/Inled-Pulsar-OS/PKG/issues/105"
 ---
